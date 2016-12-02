@@ -19,7 +19,7 @@ public class MatrixMultiplication {
         int[][] a = readInArray(args, 4, a_n, a_m);
         int[][] b = readInArray(args, 4 + a_n * a_m, b_x, b_y);
 
-        int[][] result = calculate(a, b);
+        long[][] result = calculate(a, b);
 
         print(result);
     }
@@ -63,16 +63,16 @@ public class MatrixMultiplication {
         return out;
     }
 
-    private static int[][] calculate(int[][] a, int[][] b){
+    private static long[][] calculate(int[][] a, int[][] b){
         int a_n = a.length;
         int a_m = a[0].length;
         int b_y = b[0].length;
 
-        int[][] c = new int[a_n][b_y];
+        long[][] c = new long[a_n][b_y];
 
         for (int i = 0; i < a_n; i++){
             for (int j = 0; j < b_y; j++){
-                int sum = 0;
+                long sum = 0;
                 for (int k = 0; k < a_m; k++){
                     sum += a[i][k] * b[k][j];
                 }
@@ -83,7 +83,7 @@ public class MatrixMultiplication {
         return c;
     }
 
-    private static void print(int[][] a){
+    private static void print(long[][] a){
         int a_n = a.length;
         int a_m = a[0].length;
 
